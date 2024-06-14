@@ -6,10 +6,8 @@ Array.prototype.myFilter = function(callback, thisArg) {
 
   let result = [];
 
-  let context = thisArg || undefined;
-
   this.forEach((element, index) => {
-    if (callback.call(context, element, index, this)) {
+    if (callback.call(thisArg, element, index, this)) {
       result.push(element);
     }
   });
